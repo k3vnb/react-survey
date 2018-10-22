@@ -1,36 +1,12 @@
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys')
+require('./services/passport');
+require('./routes/authRoutes');
+
 const app = express();
 
+// our authRoutes file returns a function, here we pass app to it as an arg. 
+require('./routes/authRoutes')(app);
 
-// https://console.developers.google.com
-passport.use(
-    new GoogleStrategy(
-        {
-            clientID: keys.googleClientID,
-            clientSecret: keys.googleClientSecret,
-            callbackURL: '/auth/google/callback'
-        }, 
-        (accessToken, refreshToken, profile, done) => {
-            console.log('access token: ', accessToken);
-            console.log('refresh token: ', refreshToken);
-            console.log('profile', profile);
-        }
-    )
-);
-
-app.get(
-    //whenever someone visits the route '/auth/google', they are redirected to this passport function
-    '/auth/google', 
-    passport.authenticate('google', {
-        scope: ['profile', 'email']
-    })
-);
-
-
-app.get('/auth/google/callback', passport.authenticate('google'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
