@@ -3,5 +3,6 @@
 module.exports = {
     googleClientID: 'xxx',
     googleClientSecret: 'xxx',
-    mongoURI: 'xxx'
+    mongoURI: 'xxx',
+    cookieKey: 'xxxrandomxxx'
 };
