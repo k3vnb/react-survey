@@ -1,4 +1,4 @@
-//change filename to keys.js after keys are put in place
+//change filename to dev.js after keys are put in place
 
 module.exports = {
     googleClientID: 'xxx',
