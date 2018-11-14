@@ -7,6 +7,8 @@ module.exports = {
     cookieKey: process.env.COOKIE_KEY,
     stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
     stripeSecretKey: process.env.STRIPE_SECRET_KEY,
-    sendGridKey: process.env.SEND_GRID_KEY
+    sendGridKey: process.env.SEND_GRID_KEY,
+    //redirectDomain is for when user clicks on email link, they are redirected to site
+    redirectDomain: process.env.REDIRECT_DOMAIN
 
 };
