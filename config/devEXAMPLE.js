@@ -6,5 +6,6 @@ module.exports = {
     mongoURI: 'xxx',
     cookieKey: 'xxxrandomxxx',
     stripePublishableKey: 'xxx',
-    stripeSecretKey: 'xxx'
+    stripeSecretKey: 'xxx',
+    sendGridKey: 'xxx'
 };

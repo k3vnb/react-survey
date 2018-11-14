@@ -7,6 +7,10 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './reducers';
+// import axios from 'axios'
+// window.axios = axios;
+// test in browser console, create new axios post request by first creating survey: const survey = { title: 'my title', subject: 'my subject', recipients: 'email@email.com', body: 'this be the body'};
+// then typing 'axios.post('/api/surveys', survey)';
 
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
